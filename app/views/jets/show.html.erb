@@ -1,0 +1,20 @@
+<h1>Jet Details</h1>
+
+<p>
+  <strong>Model:</strong> <%= @jet.model %>
+</p>
+
+<p>
+  <strong>Price per day:</strong> <%= number_to_currency(@jet.price) %>
+</p>
+
+<p>
+  <strong>Available:</strong> <%= @jet.available ? 'Yes' : 'No' %>
+</p>
+
+<p>
+  <strong>Capacity:</strong> <%= @jet.capacity %> passengers
+</p>
+
+<%= link_to 'Edit this Jet', edit_jet_path(@jet), class: 'btn btn-primary' %>
+<%= link_to 'Back to Jets', jets_path, class: 'btn btn-secondary' %>
