@@ -1,0 +1,37 @@
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon bg-dark">
+  <div class="container-fluid">
+    <%= link_to "#", class: "navbar-brand" do %>
+      <%= image_tag "https://www.carenews.com/sites/default/files/styles/large_actualites/public/2023-11/Design%20sans%20titre%20%282%29_0.png?itok=R4Zf5TuT" %>
+    <% end %>
+
+    <form class="d-flex ms-auto" action="#" method="GET">
+       <input class="form-control me-2" type="search" placeholder="Rechercher un jet..." aria-label="Search">
+       <button class="btn btn-outline-primary" type="submit">Rechercher</button>
+    </form>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item active">
+          <%= link_to "Jets", "#", class: "nav-link text-light" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Messages", "#", class: "nav-link text-light" %>
+        </li>
+        <li class="nav-item dropdown">
+        <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar", alt: "dropdown menu" %>
+        </a>
+          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+            <%= link_to "Action", "#", class: "dropdown-item" %>
+            <%= link_to "Another action", "#", class: "dropdown-item" %>
+            <%= link_to "Log out", "#", class: "dropdown-item" %>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
