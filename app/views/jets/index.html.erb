@@ -2,7 +2,7 @@
 
 <div class="cards">
   <% @jets.each do |jet| %>
-    <div class="card-category"><%= link_to jet.name, jet_path(jet) %></div>
+    <div class="card-category"><%= link_to jet.model, jet_path(jet) %></div>
   <% end %>
 </div>
 

@@ -18,6 +18,10 @@ class JetsController < ApplicationController
     end
   end
 
+  def show
+    @jet = Jet.find(params[:id])
+  end
+
   private
 
   def jet_params
