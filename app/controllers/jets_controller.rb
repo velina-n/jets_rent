@@ -18,6 +18,10 @@ class JetsController < ApplicationController
     end
   end
 
+  def edit
+    @jet = Jet.find(params[:id])
+  end
+
   def show
     @jet = Jet.find(params[:id])
   end
