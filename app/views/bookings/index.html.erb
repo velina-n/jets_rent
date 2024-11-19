@@ -1,11 +1,16 @@
 <h1>Your bookings:</h1>
+
 <ul>
-  <li>
   <% @bookings.each do |booking| %>
-  <%= booking.start_date %>
-  <%= booking.end_date %>
-  <%= booking.status %>
-  <%= booking.special_requests %>
+    <li>
+    <%= booking.jet.model %>
+      <%= booking.start_date %>
+      <%= booking.end_date %>
+      <%= booking.status %>
+      <%= booking.special_requests %>
+      <%= @total_price %>
+    </li>
   <% end %>
-  </li>
 </ul>
+
+<%= @total_price %>

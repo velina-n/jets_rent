@@ -1,10 +1,7 @@
 class BookingsController < ApplicationController
   def index
-    @bookings = Booking.all
-    @jet_price = Booking.find(params[:id]).price
-    #le multiplier par le nombre de jours louer
-  end
-
+  @bookings = Booking.all
+  end 
     private
 
   def set_bookings
