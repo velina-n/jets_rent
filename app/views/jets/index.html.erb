@@ -1,9 +1,22 @@
-<h1>All Jets</h1>
-
-<div class="cards">
-  <% @jets.each do |jet| %>
-    <div class="card-category"><%= link_to jet.model, jet_path(jet) %></div>
-  <% end %>
+<div class="container">
+  <h1 class="text-center">Avions disponibles pour des voyages remplis de sensations</h1>
+  <div class="row">
+    <% images = ['Beechcraft1', 'Cesna1.png', 'Solar Impulse2.png', 'Citation Ultra3.png', 'Learjet2', 'LearjetXR2', 'TopGun1'] %>
+    <% @jets.each_with_index do |jet, index| %>
+      <div class="col-md-4">
+        <div class="card mb-4 shadow-sm">
+          <%= image_tag images[index], class: "card-img-top", alt: jet.model %>
+          <div class="card-body">
+            <h5 class="card-title"><%= jet.model %></h5>
+            <p class="card-text">
+              Price: <%= convert_to_euro(jet.price) %><br>
+              Capacity: <%= jet.capacity %> passengers<br>
+              Availability: <%= jet.available ? 'Available' : 'Unavailable' %>
+            </p>
+            <%= link_to 'View Details', jet_path(jet), class: "btn btn-primary" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>
-
-<%= link_to 'add a new jet', new_jet_path %>
