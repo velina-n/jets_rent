@@ -1,0 +1,9 @@
+<h1>All Jets</h1>
+
+<div class="cards">
+  <% @jets.each do |jet| %>
+    <div class="card-category"><%= link_to jet.model, jet_path(jet) %></div>
+  <% end %>
+</div>
+
+<%= link_to 'add a new jet', new_jet_path %>
