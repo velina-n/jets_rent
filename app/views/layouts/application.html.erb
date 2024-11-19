@@ -11,8 +11,9 @@
   </head>
 
   <body>
+    <%= yield %> <!-- Contenu de chaque page -->
+    <%= render "layouts/footer" %> <!-- Inclure le footer -->
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    <%= yield %>
   </body>
 </html>
