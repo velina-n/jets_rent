@@ -7,3 +7,5 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+Booking.create!(jet: jet, user: user, start_date: '2025-01-11', end_date: '2025-02-11', special_requests: 'champagne')
