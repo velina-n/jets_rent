@@ -1,6 +1,17 @@
 
+<% if @booking.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@booking.errors.count, "error") %> prohibited this booking from being saved:</h2>
+    <ul>
+      <% @booking.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <div class='container mt-5'>
-  <%= simple_form_for :booking do |f| %>
+  <%= simple_form_for [@jet, @booking] do |f| %>
   <%= f.input :airport %>
   <%= f.input :start_date, placeholder: "yyyy-mm-jj" %>
   <%= f.input :end_date, placeholder: "yyyy-mm-jj" %>

@@ -1,0 +1,42 @@
+/* Container des cartes */
+.booking-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* Style pour chaque carte */
+.booking-card {
+  background-color: #f8f9fa; /* Couleur de fond */
+  border: 1px solid #ddd;   /* Bordure légère */
+  border-radius: 10px;      /* Coins arrondis */
+  padding: 20px;            /* Espacement interne */
+  width: 300px;             /* Largeur fixe */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre douce */
+  transition: transform 0.3s ease; /* Effet de zoom au survol */
+}
+
+/* Titre des cartes */
+.booking-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #007bff; /* Couleur principale */
+}
+
+/* Paragraphes des cartes */
+.booking-card p {
+  font-size: 1rem;
+  margin: 5px 0;
+}
+
+/* Effet au survol */
+.booking-card:hover {
+  transform: scale(1.05);
+}
+
+/* Textes en gras */
+.booking-card strong {
+  font-weight: bold;
+}

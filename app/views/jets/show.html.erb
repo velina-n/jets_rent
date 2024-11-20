@@ -18,3 +18,5 @@
 
 <%= link_to 'Edit this Jet', edit_jet_path(@jet), class: 'btn btn-primary' %>
 <%= link_to 'Back to Jets', jets_path, class: 'btn btn-secondary' %>
+
+<%= link_to 'Book this jet', new_jet_booking_path(jet_id: @jet.id), class:'btn btn-success' %>
