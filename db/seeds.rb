@@ -20,7 +20,9 @@ User.destroy_all
 puts "Base de données nettoyée."
 
 # Création des utilisateurs
+
 puts "Création des utilisateurs"
+
 user1 = User.create!(
   email: 'alice@example.com',
   password: 'password123'
