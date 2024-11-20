@@ -1,1 +1,23 @@
 // Specific CSS for your home-page
+.btn-primary {
+  background-color: #8c644b; /* Couleur de fond marron */
+  border-color: #8c644b; /* Bordure de la même couleur */
+  color: white; /* Texte en blanc */
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+
+  &:hover {
+    background-color: #704c3a; /* Couleur plus sombre au survol */
+    border-color: #704c3a;
+    transform: scale(1.05); /* Légère augmentation de taille */
+  }
+
+  &:active {
+    background-color: #5a3b2a; /* Couleur encore plus sombre lors du clic */
+    border-color: #5a3b2a;
+  }
+}
