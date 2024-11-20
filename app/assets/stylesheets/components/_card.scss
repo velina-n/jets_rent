@@ -3,3 +3,14 @@
   border-radius: 8px;
   overflow: hidden;
 }
+
+.card-img-top {
+  width: 100%; /* Taille fixe */
+  height: 150px; /* Taille fixe */
+  object-fit: cover;
+}
+
+.card-img-top:hover {
+  transform: scale(1.1); /* Zoom à 110% */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Ajout d'une ombre portée */
+}
