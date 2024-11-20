@@ -55,7 +55,7 @@ jet2 = Jet.create!(
 jet3 = Jet.create!(
   model: 'Cesna',
   price: 4000,
-  available: false,
+  available: true,
   user: user1,  # Associé à user1
   capacity: 8,
   image:"Cesna1.png"
@@ -64,7 +64,7 @@ jet3 = Jet.create!(
 jet4 = Jet.create!(
   model: 'Citation Ultra',
   price: 5000,
-  available: false,
+  available: true,
   user: user1,  # Associé à user1
   capacity: 7,
   image:"Citation Ultra3.png"
@@ -73,7 +73,7 @@ jet4 = Jet.create!(
 jet5 = Jet.create!(
   model: 'Solar Impulse',
   price: 4000,
-  available: false,
+  available: true,
   user: user1,  # Associé à user1
   capacity: 1,
   image:"Solar impulse.png"
@@ -82,7 +82,7 @@ jet5 = Jet.create!(
 jet6 = Jet.create!(
   model: 'Embraer',
   price: 4000,
-  available: false,
+  available: true,
   user: user1,  # Associé à user1
   capacity: 8,
   image:"Embraer.png"
@@ -91,7 +91,7 @@ jet6 = Jet.create!(
 jet7 = Jet.create!(
   model: 'Learjet',
   price: 5000,
-  available: false,
+  available: true,
   user: user1,  # Associé à user1
   capacity: 7,
   image:"Learjet2.png"
@@ -100,7 +100,7 @@ jet7 = Jet.create!(
 jet8 = Jet.create!(
   model: 'Learjet XR',
   price: 4000,
-  available: false,
+  available: true,
   user: user1,  # Associé à user1
   capacity: 8,
   image:"LearjetXR2.png"
@@ -109,11 +109,12 @@ jet8 = Jet.create!(
 jet9 = Jet.create!(
   model: 'Rafale',
   price: 12000,
-  available: false,
+  available: true,
   user: user1,  # Associé à user1
   capacity: 1,
   image:"Maverick.png"
 )
+
 
 
 # Création des réservations (bookings)
@@ -146,5 +147,6 @@ Booking.create!(
   jet: jet3,  # Associé à jet3 (jet non disponible)
   user: user1  # Associé à user1
 )
+
 
 puts "Seed data created successfully!"

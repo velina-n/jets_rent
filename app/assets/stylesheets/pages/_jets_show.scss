@@ -1,0 +1,65 @@
+@import "bootstrap/carousel";
+
+.jet-details {
+  .jet-title {
+    font-size: 2.5rem;
+    color: #8c644b;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  .carousel {
+    max-height: 350px;
+    overflow: hidden;
+    border: 3px solid #8c644b;
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+
+  .carousel-inner img {
+    object-fit: cover;
+    height: 350px;
+  }
+
+  .jet-model {
+    font-size: 1.8rem;
+    color: #8c644b;
+    font-weight: bold;
+    margin-top: 20px;
+  }
+
+  .jet-price, .jet-availability, .jet-capacity {
+    font-size: 1.2rem;
+    margin-top: 10px;
+  }
+
+  .action-buttons {
+    display: flex;
+    gap: 10px;
+
+    .btn-jet-primary {
+      background-color: #8c644b;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-jet-primary:hover {
+      background-color: #a57157;
+    }
+
+    .btn-jet-secondary {
+      background-color: #e0e0e0;
+      color: #000;
+      padding: 10px 20px;
+      border: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-jet-secondary:hover {
+      background-color: #cccccc;
+    }
+  }
+}
