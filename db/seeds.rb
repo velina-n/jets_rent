@@ -13,6 +13,11 @@
 # booking = Booking.create!(airport: 'CDG', jet: jet, user: user, start_date: '2025-01-11', end_date: '2025-02-11', special_requests: 'champagne')
 
 # Création des utilisateurs
+
+Booking.destroy_all
+User.destroy_all
+Jet.destroy_all
+
 user1 = User.create!(
   email: 'alice@example.com',
   password: 'password123'
@@ -83,4 +88,3 @@ Booking.create!(
 )
 
 puts "Seed data created successfully!"
-
