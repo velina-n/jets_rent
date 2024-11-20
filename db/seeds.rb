@@ -29,7 +29,8 @@ jet1 = Jet.create!(
   price: 5000,
   available: true,
   user: user1,  # Associé à user1
-  capacity: 12
+  capacity: 12,
+  image:"Cesna1.png"
 )
 
 jet2 = Jet.create!(
@@ -37,7 +38,8 @@ jet2 = Jet.create!(
   price: 8000,
   available: true,
   user: user2,  # Associé à user2
-  capacity: 14
+  capacity: 14,
+  image:"Citation Ulta4.png"
 )
 
 jet3 = Jet.create!(
@@ -45,7 +47,8 @@ jet3 = Jet.create!(
   price: 4000,
   available: false,
   user: user1,  # Associé à user1
-  capacity: 8
+  capacity: 8,
+  image:"LearjetXR1.png"
 )
 
 # Création des réservations (bookings)
