@@ -83,3 +83,4 @@ Booking.create!(
 )
 
 puts "Seed data created successfully!"
+
