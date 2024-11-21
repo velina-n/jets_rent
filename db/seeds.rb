@@ -33,7 +33,7 @@ user2 = User.create!(
   password: 'password123'
 )
 
-# Création des jets
+# Création des jets  
 jet1 = Jet.create!(
   model: 'Falcon 900',
   price: 8000,

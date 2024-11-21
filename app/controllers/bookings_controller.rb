@@ -12,18 +12,19 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.user = current_user
     @jet = Jet.find(params[:jet_id])
-    @booking.jet = Jet.find(params[:jet_id])
-    # puts "on a trouver le jet#{@booking.jet}"
-    # puts "le user est #{@booking.jet}"
+    @booking.jet = @jet
     @booking.status = "pending"
 
     if @booking.save
-       # Vérifie si la réservation est correctement sauvegardée
-      redirect_to jet_path(@jet), notice: "Booking created successfully." # Redirection avec un message de succès
+      # Redirige vers la page du jet en cas de succès
+      redirect_to jet_path(@jet), notice: "Votre réservation a été créée avec succès."
     else
-      render :new # Si la sauvegarde échoue, on affiche à nouveau le formulaire de création
+      # Recharger la page show avec les erreurs du formulaire
+      @jet = @booking.jet
+      render "jets/show", status: :unprocessable_entity
     end
   end
+
 
     private
 
