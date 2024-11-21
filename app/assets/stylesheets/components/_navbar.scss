@@ -1,12 +1,16 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
-}
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
-}
+  .navbar-brand img {
+    width: 40px;
+    cursor: pointer; /* Permet d'indiquer que l'image est cliquable */
+  }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+  .nav-link {
+    color: white;
+    &:hover {
+      color: #8c644b; /* Ajoute un effet hover pour améliorer le design */
+    }
+  }
 }
