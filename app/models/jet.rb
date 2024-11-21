@@ -1,7 +1,7 @@
 class Jet < ApplicationRecord
-  belongs_to :user # Relation avec le modèle User
-  has_many :bookings
-  has_many_attached :images
+  belongs_to :user
+  has_many :bookings, dependent: :destroy
 
-  validates :airport, presence: true
+  validates :model, :price, :capacity, presence: true
+  validates :price, numericality: { greater_than: 0 }
 end

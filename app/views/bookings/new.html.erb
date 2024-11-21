@@ -1,3 +1,4 @@
+<%# app/views/bookings/new.html.erb %>
 <%= simple_form_for [@jet, @booking] do |f| %>
   <!-- Champ pour l'aéroport -->
   <div class="mb-3">
@@ -6,22 +7,21 @@
 
   <!-- Champ pour la date de début -->
   <div class="mb-3">
-  <%= f.input :start_date, as: :string, label: "Date de début", input_html: { data: { controller: "datepicker" }, class: "form-control flatpickr" } %>
+    <%= f.input :start_date, as: :string, label: "Date de début", input_html: { data: { controller: "datepicker" }, class: "form-control flatpickr" } %>
   </div>
 
   <!-- Champ pour la date de fin -->
   <div class="mb-3">
-  <%= f.input :end_date, as: :string, label: "Date de fin", input_html: { data: { controller: "datepicker" }, class: "form-control flatpickr" } %>
+    <%= f.input :end_date, as: :string, label: "Date de fin", input_html: { data: { controller: "datepicker" }, class: "form-control flatpickr" } %>
   </div>
 
-
-  <% end %>
-</div>
   <!-- Champ pour les demandes spéciales -->
   <div class="mb-3">
     <%= f.input :special_requests, label: "Demandes spéciales", input_html: { class: "form-control" } %>
   </div>
 
   <!-- Bouton de soumission -->
-  <%= f.submit "Créer la réservation", class: "btn btn-primary" %>
+  <div class="mt-4">
+    <%= f.submit "Créer la réservation", class: "btn btn-primary" %>
+  </div>
 <% end %>

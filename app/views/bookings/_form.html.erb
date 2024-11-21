@@ -1,4 +1,4 @@
-<%= simple_form_for [jet, booking] do |f| %>
+<%= simple_form_for [@jet, @booking] do |f| %>
   <!-- Champ pour l'aéroport -->
   <div class="mb-3">
     <%= f.input :airport, label: "Aéroport", input_html: { class: "form-control" } %>
