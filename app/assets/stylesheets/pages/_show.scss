@@ -13,7 +13,9 @@
 .reservation-form {
   background-color: #fff; /* Fond blanc pour le formulaire */
   padding: 20px;
+  margin-left: 20px;
   border-radius: 10px;
+  width: 375px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre */
 }
 
@@ -21,4 +23,23 @@
   display: block;
   width: 100%; /* Boutons larges */
   margin-bottom: 10px;
+}
+
+ .container-resa {
+  display: grid;
+  grid-template-columns: 500px 500px;
+ }
+
+.column {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 1;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
 }
