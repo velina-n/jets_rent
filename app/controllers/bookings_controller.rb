@@ -11,6 +11,7 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     @booking.user = current_user
+    @jet = Jet.find(params[:jet_id])
     @booking.jet = Jet.find(params[:jet_id])
     # puts "on a trouver le jet#{@booking.jet}"
     # puts "le user est #{@booking.jet}"

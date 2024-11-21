@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :jets do
     resources :bookings, only: [:index, :new, :create]
   end
+  
 
   #root "home#index" # Page d'accueil
 
