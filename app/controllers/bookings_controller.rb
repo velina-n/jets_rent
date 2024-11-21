@@ -10,7 +10,6 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
-    @booking = @jet.bookings.build(booking_params)
     @booking.user = current_user
     @jet = Jet.find(params[:jet_id])
     @booking.jet = Jet.find(params[:jet_id])
