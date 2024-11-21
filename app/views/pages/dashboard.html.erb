@@ -28,5 +28,8 @@
       <p><%= booking.start_date %></p>
       <p><%= booking.end_date %></p>
       <p><%= convert_to_euro(total_price(booking)) %></p>
+      <%# interpoller une variable renvoyant une string avec le status d'une réservation (pending, accepted, refused) %>
     <% end %>
+
+
   </div>
