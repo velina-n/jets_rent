@@ -1,10 +1,11 @@
 <div class="jet-details container mt-5">
   <h1 class="jet-title text-center mb-4">Détails du Jet</h1>
-  <div class="container-resa">
-  <div class="row">
+  <div class="container-resa" style="
+    display: grid;
+    grid-template-columns: 500px 500px;">
     <!-- Section gauche : Image -->
 <div class="column">
-    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" style="width:50%">
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
         <%=  image_tag @jet.image ,class:"d-block w-100" %>
@@ -54,6 +55,5 @@
       </div>
     </div>
   </div>
-</div>
 </div>
 </div>
