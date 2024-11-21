@@ -73,26 +73,3 @@
   display: flex;
   justify-content: center;
 }
-
-/*******************************
-    Boutons personnalisés
-*******************************/
-
-/* Surcharge des styles pour .btn-jet */
-.btn-primary.btn-jet {
-  background-color: #8c644b !important; /* Remplace la couleur bleue de Bootstrap */
-  border: none !important; /* Supprime les bordures par défaut */
-  color: #fff !important; /* Texte blanc */
-  font-weight: bold; /* Rendre le texte plus visible */
-  text-transform: uppercase; /* Mettre le texte en majuscules */
-  padding: 10px 15px; /* Ajout d'espace interne pour le confort */
-  border-radius: 5px; /* Coins légèrement arrondis */
-  transition: background-color 0.3s ease; /* Animation douce lors du survol */
-}
-
-/* Effet au survol */
-.btn-primary.btn-jet:hover {
-  background-color: #a57157 !important; /* Teinte légèrement plus claire au hover */
-  color: #fff !important; /* Conserve le texte blanc */
-}
-
