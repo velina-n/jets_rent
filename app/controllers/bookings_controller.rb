@@ -1,35 +1,19 @@
 class BookingsController < ApplicationController
-  def index
-  @bookings = current_user.bookings
-  end
-
-  def new
-    @jet = Jet.find(params[:jet_id])
-    @booking = Booking.new
-  end
-
   def create
-    @booking = Booking.new(booking_params)
-    @booking.user = current_user
-    @jet = Jet.find(params[:jet_id])
-    @booking.jet = Jet.find(params[:jet_id])
-    # puts "on a trouver le jet#{@booking.jet}"
-    # puts "le user est #{@booking.jet}"
-    @booking.status = "pending"
+    @jet = Jet.find(params[:jet_id]) # Trouve le jet associé
+    @booking = @jet.bookings.new(booking_params) # Associe la réservation au jet
+    @booking.user = current_user # Associe la réservation à l'utilisateur connecté
 
     if @booking.save
-       # Vérifie si la réservation est correctement sauvegardée
-      redirect_to jet_path(@jet), notice: "Booking created successfully." # Redirection avec un message de succès
+      redirect_to jet_path(@jet), notice: 'Réservation créée avec succès!'
     else
-      render :new # Si la sauvegarde échoue, on affiche à nouveau le formulaire de création
+      # Affiche les erreurs de validation pour débogage
+      Rails.logger.debug(@booking.errors.full_messages.join(", "))
+      render 'jets/show', status: :unprocessable_entity
     end
   end
 
-    private
-
-  def set_jet
-    @jet = Jet.find(params[:jet_id])
-  end
+  private
 
   def booking_params
     params.require(:booking).permit(:airport, :start_date, :end_date, :special_requests)

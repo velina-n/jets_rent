@@ -1,0 +1,10 @@
+# config/locales/fr.yml
+fr:
+  hello: "Bonjour"
+  number:
+    currency:
+      format:
+        unit: "€"
+        format: "%n %u" # Exemple : "1000 €"
+        separator: ","
+        delimiter: " "

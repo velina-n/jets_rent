@@ -4,8 +4,9 @@ class PagesController < ApplicationController
   end
 
   def dashboard
-    @user = current_user
-    @jets = current_user.jets
-    @bookings = @user.bookings
+    @jets = Jet.all # Exemple d'affichage des jets sur le tableau de bord
+    if user_signed_in? # Vérification correcte avec `?`
+      @bookings = current_user.bookings # Affiche uniquement les réservations de l'utilisateur connecté
+    end
   end
 end

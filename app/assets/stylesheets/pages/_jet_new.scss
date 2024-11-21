@@ -1,0 +1,56 @@
+/* Style général pour les cartes */
+.card {
+  border-radius: 15px;
+  background-color: #fdfdfd;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Style de l'en-tête */
+.card-header {
+  background-color: #4a4a4a;
+  border-radius: 15px 15px 0 0;
+}
+
+.card-header h2 {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+/* Style pour les champs de formulaire */
+.form-control {
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+/* Bouton de soumission */
+.btn-secondary {
+  background-color: #4a4a4a;
+  border: none;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background-color: #2f2f2f;
+}
+
+/* Switch toggle */
+.form-check-input {
+  width: 40px;
+  height: 20px;
+  background-color: #ccc;
+  border-radius: 15px;
+  transition: background-color 0.3s ease;
+}
+
+.form-check-input:checked {
+  background-color: #4a4a4a;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .card {
+    margin: 20px;
+  }
+}

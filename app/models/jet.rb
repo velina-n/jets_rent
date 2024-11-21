@@ -2,8 +2,12 @@ class Jet < ApplicationRecord
   belongs_to :user
   has_many_attached :images
 
-  validates :model, presence: true
-  validates :price, presence: true, numericality: { greater_than_or_equal_to: 0 }
-  validates :capacity, presence: true, numericality: { only_integer: true, greater_than: 0 }
-  validates :images, presence: { message: "must be attached" }
+  # Attribut virtuel pour désactiver temporairement la validation des images
+  attr_accessor :skip_image_validation
+
+  # Validations
+  validates :model, :price, :capacity, presence: true
+  validates :images, presence: true, unless: -> { skip_image_validation }
+
+  # Autres méthodes ou logiques du modèle (si nécessaire)
 end
