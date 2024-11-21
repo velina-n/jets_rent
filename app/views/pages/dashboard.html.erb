@@ -1,0 +1,21 @@
+<h1>salut dashboard</h1>
+
+ <div class="row">
+    <% @jets.each do |jet| %>
+      <div class="col-md-4">
+        <div class="card jet-card">
+          <!-- Utilisez une image par défaut si `jet.image` est nil -->
+          <%= image_tag jet.image.presence || "default_jet.png", class: "card-img-top jet-card-img", alt: jet.model %>
+          <div class="card-body text-center">
+            <h5 class="card-title fw-bold"><%= jet.model %></h5>
+            <p class="card-text">
+              Prix : <%= number_to_currency(jet.price, unit: "€") %><br>
+              Capacité : <%= jet.capacity %> passagers<br>
+              Disponibilité : <%= jet.available ? 'Disponible' : 'Indisponible' %>
+            </p>
+            <%= link_to 'Voir les détails', jet_path(jet), class: "btn btn-jet btn-primary" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
