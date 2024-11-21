@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>JetsRent</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Jets Rent</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <%= stylesheet_link_tag "application", "https://cdn.jsdelivr.net/npm/flatpickr/dist/themes/material_blue.css", media: "all" %>
-    <%= javascript_importmap_tags %>
-   </head>
 
+    <!-- Inclure les feuilles de styles via le pipeline d'assets -->
+    <%= stylesheet_link_tag "application", media: "all", "data-turbo-track": "reload" %>
+
+    <!-- Meta pour le responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
 
   <body>
-    <%= render 'shared/navbar' %>
-    <%= yield %> <!-- Contenu de chaque page -->
-    <%= render "layouts/footer" %> <!-- Inclure le footer -->
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <%= yield %>
+
+    <!-- Inclure le fichier JavaScript principal -->
+    <%= javascript_importmap_tags %>
   </body>
 </html>
