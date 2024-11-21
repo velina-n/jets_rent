@@ -1,3 +1,4 @@
+# app/controllers/jets_controller.rb
 class JetsController < ApplicationController
   def index
     @jets = Jet.all
