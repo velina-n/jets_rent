@@ -1,37 +1,45 @@
-/* Style pour les boutons personnalisés */
-
 /* Bouton principal */
 .btn-jet-primary {
+  display: inline-block; /* Pour ressembler à un bouton */
   background-color: #8c644b; /* Marron principal */
   color: #fff; /* Texte en blanc */
   padding: 10px 20px; /* Espacement interne */
-  border: none; /* Pas de bordure */
+  border: 2px solid #8c644b; /* Bordure marron */
   border-radius: 5px; /* Coins arrondis */
   font-weight: bold; /* Texte en gras */
   text-transform: uppercase; /* Texte en majuscule */
-  transition: background-color 0.3s ease; /* Transition douce pour l'effet hover */
+  text-align: center; /* Centrer le texte */
+  text-decoration: none; /* Supprimer le soulignement */
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease; /* Transition douce */
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); /* Légère ombre */
 }
 
 .btn-jet-primary:hover {
-  background-color: #a57157; /* Couleur légèrement plus claire au survol */
-  text-decoration: none; /* Pas de soulignement au survol */
+  background-color: #fff; /* Fond blanc au survol */
+  color: #8c644b; /* Texte marron au survol */
+  border-color: #8c644b; /* Bordure marron au survol */
+  text-decoration: none; /* Pas de soulignement */
 }
 
 /* Bouton secondaire */
 .btn-jet-secondary {
+  display: inline-block; /* Pour ressembler à un bouton */
   background-color: #e0e0e0; /* Gris clair */
   color: #000; /* Texte noir */
   padding: 10px 20px; /* Espacement interne */
-  border: none; /* Pas de bordure */
+  border: 2px solid #cccccc; /* Bordure grise */
   border-radius: 5px; /* Coins arrondis */
   font-weight: bold; /* Texte en gras */
   text-transform: uppercase; /* Texte en majuscule */
-  transition: background-color 0.3s ease; /* Transition douce pour l'effet hover */
+  text-align: center; /* Centrer le texte */
+  text-decoration: none; /* Supprimer le soulignement */
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease; /* Transition douce */
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); /* Légère ombre */
 }
 
 .btn-jet-secondary:hover {
-  background-color: #cccccc; /* Couleur légèrement plus foncée au survol */
-  text-decoration: none; /* Pas de soulignement au survol */
+  background-color: #fff; /* Fond blanc au survol */
+  color: #000; /* Texte noir au survol */
+  border-color: #999999; /* Bordure grise plus foncée au survol */
+  text-decoration: none; /* Pas de soulignement */
 }
