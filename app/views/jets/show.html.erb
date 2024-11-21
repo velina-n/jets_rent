@@ -1,22 +1,31 @@
-<h1>Jet Details</h1>
+<%# app/views/jets/show.html.erb %>
+<div class="jet-details container mt-5">
+  <h1 class="jet-title text-center mb-4">Détails du Jet</h1>
 
-<p>
-  <strong>Model:</strong> <%= @jet.model %>
-</p>
+  <div class="row">
+    <!-- Section gauche : Image -->
+    <div class="col-md-6">
+      <%= image_tag @jet.image || "placeholder.png", class: "jet-image img-fluid rounded shadow", alt: @jet.model %>
+    </div>
 
-<p>
-  <strong>Price per day:</strong> <%= convert_to_euro(@jet.price) %>
-</p>
+    <!-- Section droite : Informations -->
+    <div class="col-md-6">
+      <h2 class="jet-model"><%= @jet.model %></h2>
+      <p class="jet-price">
+        <strong>Prix par jour : </strong><%= convert_to_euro(@jet.price) %>
+      </p>
+      <p class="jet-availability">
+        <strong>Disponibilité : </strong><%= @jet.available ? 'Disponible' : 'Non disponible' %>
+      </p>
+      <p class="jet-capacity">
+        <strong>Capacité : </strong><%= @jet.capacity %> passagers
+      </p>
 
-<p>
-  <strong>Available:</strong> <%= @jet.available ? 'Yes' : 'No' %>
-</p>
-
-<p>
-  <strong>Capacity:</strong> <%= @jet.capacity %> passengers
-</p>
-
-<%= link_to 'Edit this Jet', edit_jet_path(@jet), class: 'btn btn-primary' %>
-<%= link_to 'Back to Jets', jets_path, class: 'btn btn-secondary' %>
-
-<%= link_to 'Book this jet', new_jet_booking_path(jet_id: @jet.id), class:'btn btn-success' %>
+      <!-- Boutons d'action -->
+      <div class="action-buttons mt-4">
+        <%= link_to 'Retour à la liste', jets_path, class: 'btn btn-jet-secondary' %>
+        <%= link_to 'Réserver ce jet', new_jet_booking_path(jet_id: @jet.id), class: 'btn btn-jet-primary' %>
+      </div>
+    </div>
+  </div>
+</div>

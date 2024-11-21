@@ -3,14 +3,12 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
 
+
   resources :jets do
     resources :bookings, only: [:index, :new, :create]
   end
+
   #root "home#index" # Page d'accueil
-  resources :bookings, only: [:index, :new]
-  resources :jets, only: [:index, :new, :create, :show, :edit, :update]
-
-
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
