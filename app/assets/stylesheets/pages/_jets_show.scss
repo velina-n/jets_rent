@@ -1,0 +1,23 @@
+.jet-details {
+  .jet-title {
+    font-size: 2.5rem;
+    color: #8c644b;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 20px; /* Espacement sous le titre */
+  }
+
+  .jet-model {
+    font-size: 1.8rem;
+    color: #8c644b;
+    font-weight: bold;
+    margin-top: 20px;
+  }
+
+  .jet-price,
+  .jet-availability,
+  .jet-capacity {
+    font-size: 1.2rem;
+    margin-top: 10px;
+  }
+}

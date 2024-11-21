@@ -1,21 +1,53 @@
-<%# <div class='container'>
-  <div class='row text-center m-5'>
-    <h1>Bienvenue sur Jets Rent !</h1>
-    <h2>L'application qui vous permet de louer un jet pour vos voyages</h2>
-  </div>
-</div> %>
+<%# app/views/pages/home.html.erb %>
 
 <div class="banner">
   <div class="banner-content">
     <h1 class="banner-title">Bienvenue sur notre site</h1>
     <p class="banner-subtitle">Vivez une expérience de voyage exceptionnelle avec nos jets privés de luxe.</p>
-    <a href="http://localhost:3000/jets" class="btn-primary">Réservez votre vol</a>
+    <%= link_to 'Réservez votre vol', jets_path, class: "btn btn-primary me-2" %>
+    <%= link_to 'Louez votre jet', new_jet_path, class: "btn btn-primary" %>
   </div>
 </div>
+
 
 <div class="container mt-5">
   <div class="row text-center">
     <h2>Pourquoi choisir Jets Rent ?</h2>
     <p>Louez un jet privé en quelques clics, profitez d'un confort absolu et arrivez à destination en toute sérénité.</p>
+  </div>
+
+  <div class="row mt-4">
+    <!-- Première carte -->
+    <div class="col-md-4">
+      <div class="card text-center shadow-sm">
+        <div class="card-body">
+          <%= image_tag "luxury_icon.png", class: "mb-3", alt: "Confort absolu", width: 80 %>
+          <h5 class="card-title">Confort de Luxe</h5>
+          <p class="card-text">Voyagez dans des jets équipés des meilleurs aménagements pour une expérience inoubliable.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Deuxième carte -->
+    <div class="col-md-4">
+      <div class="card text-center shadow-sm">
+        <div class="card-body">
+          <%= image_tag "efficiency_icon.png", class: "mb-3", alt: "Efficacité", width: 80 %>
+          <h5 class="card-title">Efficacité et Rapidité</h5>
+          <p class="card-text">Réservez votre jet en quelques minutes et gagnez du temps précieux pour vos déplacements.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Troisième carte -->
+    <div class="col-md-4">
+      <div class="card text-center shadow-sm">
+        <div class="card-body">
+          <%= image_tag "network_icon.png", class: "mb-3", alt: "Réseau", width: 80 %>
+          <h5 class="card-title">Large Réseau d'Aéroports</h5>
+          <p class="card-text">Accédez à un vaste réseau d'aéroports pour connecter les destinations qui comptent pour vous.</p>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
