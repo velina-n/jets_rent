@@ -1,30 +1,36 @@
-<%# app/views/jets/show.html.erb %>
 <div class="jet-details container mt-5">
   <h1 class="jet-title text-center mb-4">Détails du Jet</h1>
 
   <div class="row">
     <!-- Section gauche : Image -->
-    <div class="col-md-6">
+    <div class="col-md-4">
       <%= image_tag @jet.image || "placeholder.png", class: "jet-image img-fluid rounded shadow", alt: @jet.model %>
     </div>
 
-    <!-- Section droite : Informations -->
-    <div class="col-md-6">
+    <!-- Section centre : Informations -->
+    <div class="col-md-4 d-flex flex-column justify-content-center">
       <h2 class="jet-model"><%= @jet.model %></h2>
       <p class="jet-price">
-        <strong>Prix par jour : </strong><%= convert_to_euro(@jet.price) %>
+        <strong>Prix par jour  </strong><%= convert_to_euro(@jet.price) %>
       </p>
       <p class="jet-availability">
-        <strong>Disponibilité : </strong><%= @jet.available ? 'Disponible' : 'Non disponible' %>
+        <strong>Disponibilité  </strong><%= @jet.available ? 'Disponible' : 'Non disponible' %>
       </p>
       <p class="jet-capacity">
-        <strong>Capacité : </strong><%= @jet.capacity %> passagers
+        <strong>Capacité  </strong><%= @jet.capacity %> passagers
       </p>
 
       <!-- Boutons d'action -->
       <div class="action-buttons mt-4">
-        <%= link_to 'Retour à la liste', jets_path, class: 'btn btn-jet-secondary' %>
-        <%= link_to 'Réserver ce jet', new_jet_booking_path(jet_id: @jet.id), class: 'btn btn-jet-primary' %>
+        <%= link_to 'Retour à la liste', jets_path, class: 'btn btn-jet-secondary mb-2' %>
+      </div>
+    </div>
+
+    <!-- Section droite : Formulaire -->
+    <div class="col-md-4">
+      <div class="reservation-form">
+        <h2 class="text-center">Créer une réservation</h2>
+        <%= render 'bookings/form', jet: @jet, booking: Booking.new %>
       </div>
     </div>
   </div>

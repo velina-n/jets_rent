@@ -8,6 +8,8 @@ Rails.application.routes.draw do
     resources :bookings, only: [:index, :new, :create]
   end
 
+  get 'pages/dashboard'
+  
   #root "home#index" # Page d'accueil
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

@@ -1,6 +1,5 @@
 import { Controller } from "@hotwired/stimulus";
 import flatpickr from "flatpickr";
-import "flatpickr/dist/themes/material_blue.css"; // Assurez-vous d'importer le CSS
 
 export default class extends Controller {
   connect() {
