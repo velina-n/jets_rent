@@ -1,4 +1,3 @@
-<%# app/views/jets/show.html.erb %>
 <div class="jet-details container mt-5">
   <h1 class="jet-title text-center mb-4">Détails du Jet</h1>
 
@@ -25,6 +24,16 @@
       <div class="action-buttons mt-4">
         <%= link_to 'Retour à la liste', jets_path, class: 'btn btn-jet-secondary' %>
         <%= link_to 'Réserver ce jet', new_jet_booking_path(jet_id: @jet.id), class: 'btn btn-jet-primary' %>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section du formulaire de réservation -->
+  <div class="reservation-form container mt-5">
+    <h2 class="text-center">Créer une réservation</h2>
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <%= render 'bookings/form', jet: @jet, booking: Booking.new %>
       </div>
     </div>
   </div>
