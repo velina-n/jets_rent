@@ -11,11 +11,12 @@
 @import "components/index";
 @import "pages/index";
 
+@import "https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css";
+
 
 h1 {
   color: #f66505;
   font-size: 2.5rem;
-  line-height: 100rem;
   font-weight: 800;
 }
 
@@ -26,7 +27,7 @@ h1 {
 }
 
 .btn-secondary {
-  color: #c8c5c5;
+  color: #e4cccc;
   background-color: #f8f9fa;
   border-color: #ddd;
 }
@@ -76,19 +77,69 @@ a {
   margin-bottom: 30px;
 }
 
-.btn-primary {
-  background-color: #007bff;
-  border-color: #007bff;
-  padding: 10px 20px;
-  font-size: 1.2rem;
-  text-decoration: none;
-  color: rgb(243, 240, 240);
-  transition: all 0.3s ease;
+// home page
+.banner {
+  position: relative;
+  background-image: url("https://www.carenews.com/sites/default/files/styles/large_actualites/public/2023-11/Design%20sans%20titre%20%282%29_0.png");
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-align: center;
+  padding: 100px 20px;
 
+  .banner-content {
+    background-color: rgba(0, 0, 0, 0.6); /* Ajout d'un filtre sombre pour le texte */
+    display: inline-block;
+    padding: 20px 40px;
+    border-radius: 10px;
+  }
+
+  .banner-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+
+  .banner-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+
+  .btn-primary {
+    background-color: #8c644b;
+    border-color: #8c644b;
+    &:hover {
+      background-color: #704c3a;
+      border-color: #704c3a;
+    }
+  }
+
+  .btn-secondary {
+    background-color: #6c757d;
+    border-color: #6c757d;
+    &:hover {
+      background-color: #5a6268;
+      border-color: #5a6268;
+    }
+  }
 }
 
-.btn-primary:hover {
-  background-color: #cba165;
-  border-color: #cba165;
-}
+.card {
+  border: none;
+  border-radius: 10px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  &:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+  }
 
+  .card-title {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+
+  .card-text {
+    color: #6c757d;
+  }
+}
