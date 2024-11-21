@@ -1,26 +1,19 @@
-<%= simple_form_for [@jet, @booking] do |f| %>
-  <!-- Champ pour l'aéroport -->
+<%= simple_form_for @jet do |f| %>
   <div class="mb-3">
-    <%= f.input :airport, label: "Aéroport", input_html: { class: "form-control" } %>
+    <%= f.input :model, label: "Modèle du jet", input_html: { class: "form-control" } %>
   </div>
 
-  <!-- Champ pour la date de début -->
   <div class="mb-3">
-    <%= f.input :start_date, label: "Date de début",
-                input_html: { data: { controller: "datepicker" }, class: "form-control" } %>
+    <%= f.input :price, label: "Prix par jour (€)", input_html: { class: "form-control" } %>
   </div>
 
-  <!-- Champ pour la date de fin -->
   <div class="mb-3">
-    <%= f.input :end_date, label: "Date de fin",
-                input_html: { data: { controller: "datepicker" }, class: "form-control" } %>
+    <%= f.input :capacity, label: "Capacité (nombre de passagers)", input_html: { class: "form-control" } %>
   </div>
 
-  <!-- Champ pour les demandes spéciales -->
   <div class="mb-3">
-    <%= f.input :special_requests, label: "Demandes spéciales", input_html: { class: "form-control" } %>
+    <%= f.input :available, as: :boolean, label: "Disponible ?" %>
   </div>
 
-  <!-- Bouton de soumission -->
-  <%= f.submit "Créer la réservation", class: "btn btn-primary" %>
+  <%= f.submit "Créer le jet", class: "btn btn-primary" %>
 <% end %>

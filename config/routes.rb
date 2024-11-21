@@ -9,8 +9,8 @@ Rails.application.routes.draw do
   end
   
 
-  get 'pages/dashboard'
-  
+  get '/dashboard', to: 'pages#dashboard'
+
   #root "home#index" # Page d'accueil
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
