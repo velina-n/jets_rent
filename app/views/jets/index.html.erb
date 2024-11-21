@@ -1,21 +1,18 @@
 <div class="container">
- <br>
-  <h1 class="text-center">AVIONS DISPONIBLES</h1>
-  <br>
-  <h1 class="text-center">Louez un Jet privé. <span class="highlight">Voyagez avec style.</span></h1>
-  <h2 class="text-center subtitle">La liberté et le confort à votre portée, à chaque vol.</h2>
+  <h1 class="text-center mb-2 mt-4">AVIONS DISPONIBLES</h1>
+  <h2 class="text-center mb-3">Prenez votre envol dans un confort absolu !</h2>
   <div class="row">
     <% @jets.each do |jet| %>
-      <div class="col-md-4">
+      <div class="col-md-4 <%= jet.available ? '' : "unavailable" %>">
         <div class="card jet-card">
           <!-- Utilisez une image par défaut si `jet.image` est nil -->
           <%= image_tag jet.image.presence || "default_jet.png", class: "card-img-top jet-card-img", alt: jet.model %>
           <div class="card-body text-center">
             <h5 class="card-title fw-bold"><%= jet.model %></h5>
             <p class="card-text">
-              Prix : <%= number_to_currency(jet.price, unit: "€") %><br>
-              Capacité : <%= jet.capacity %> passagers<br>
-              Disponibilité : <%= jet.available ? 'Disponible' : 'Indisponible' %>
+              <%= number_to_currency(jet.price, unit: "€") %><br>
+              <%= jet.capacity %> passagers<br>
+              <%= jet.available ? 'Disponible' : 'Indisponible' %>
             </p>
             <%= link_to 'Voir les détails', jet_path(jet), class: "btn btn-jet btn-primary" %>
           </div>

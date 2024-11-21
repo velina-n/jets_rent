@@ -37,7 +37,7 @@ user2 = User.create!(
 jet1 = Jet.create!(
   model: 'Falcon 900',
   price: 8000,
-  available: true,
+  available: false,
   user: user1,  # Associé à user1
   capacity: 12,
   image:"Falcon 900.png"
