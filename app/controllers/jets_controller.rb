@@ -24,6 +24,7 @@ class JetsController < ApplicationController
 
   def show
     @jet = Jet.find(params[:id])
+    @booking = Booking.new
   end
 
   private
