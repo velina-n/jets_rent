@@ -1,23 +1,26 @@
+<% if @booking.errors.any? %>
+  <div class="alert alert-danger">
+    <h4>Veuillez corriger les erreurs suivantes :</h4>
+    <ul>
+      <% @booking.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <%= simple_form_for [@jet, @booking] do |f| %>
   <!-- Champ pour l'aéroport -->
-  <div class="mb-3">
-    <%= f.input :airport, label: "Aéroport", input_html: { class: "form-control" } %>
-  </div>
+  <%= f.input :airport, label: "Aéroport", input_html: { class: "form-control" } %>
 
   <!-- Champ pour la date de début -->
-  <div class="mb-3">
-    <%= f.input :start_date, as: :string, label: "Date de début", input_html: { data: { controller: "datepicker" }, class: "form-control flatpickr" } %>
-  </div>
+  <%= f.input :start_date, as: :string, label: "Date de début", input_html: { data: { controller: "datepicker" }, class: "form-control flatpickr" } %>
 
   <!-- Champ pour la date de fin -->
-  <div class="mb-3">
-    <%= f.input :end_date, as: :string, label: "Date de fin", input_html: { data: { controller: "datepicker" }, class: "form-control flatpickr" } %>
-  </div>
+  <%= f.input :end_date, as: :string, label: "Date de fin", input_html: { data: { controller: "datepicker" }, class: "form-control flatpickr" } %>
 
   <!-- Champ pour les demandes spéciales -->
-  <div class="mb-3">
-    <%= f.input :special_requests, label: "Demandes spéciales", input_html: { class: "form-control" } %>
-  </div>
+  <%= f.input :special_requests, label: "Demandes spéciales", input_html: { class: "form-control" } %>
 
   <!-- Bouton de soumission -->
   <%= f.submit "Créer la réservation", class: "btn btn-primary" %>

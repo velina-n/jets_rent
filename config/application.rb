@@ -13,6 +13,9 @@ module JetsRent
       generate.assets false
       generate.helper false
       generate.test_framework :test_unit, fixture: false
+            # Configuration pour inclure la locale française
+      config.i18n.available_locales = [:en, :fr]
+      config.i18n.default_locale = :fr #
     end
 
     # Initialize configuration defaults for originally generated Rails version.

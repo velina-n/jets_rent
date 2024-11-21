@@ -1,20 +1,22 @@
 <div class="container">
-  <h1 class="text-center mb-2 mt-4">AVIONS DISPONIBLES</h1>
-  <h2 class="text-center mb-3">Prenez votre envol dans un confort absolu !</h2>
+  <h1 class="text-center">AVIONS DISPONIBLES</h1>
+  <h2 class="text-center">Prenez votre envol dans un confort absolu !</h2>
   <div class="row">
     <% @jets.each do |jet| %>
-      <div class="col-md-4 <%= jet.available ? '' : "unavailable" %>">
+      <div class="col-md-4">
         <div class="card jet-card">
-          <!-- Utilisez une image par défaut si `jet.image` est nil -->
-          <%= image_tag jet.image.presence || "default_jet.png", class: "card-img-top jet-card-img", alt: jet.model %>
+          <!-- Recherche de l'image -->
+          <%= image_tag(asset_path(jet.image), class: "card-img-top jet-card-img", alt: jet.model) if jet.image.present? %>
           <div class="card-body text-center">
             <h5 class="card-title fw-bold"><%= jet.model %></h5>
             <p class="card-text">
-              <%= number_to_currency(jet.price, unit: "€") %><br>
-              <%= jet.capacity %> passagers<br>
-              <%= jet.available ? 'Disponible' : 'Indisponible' %>
+              <%= number_to_currency(jet.price) %><br>
+              <%= pluralize(jet.capacity, 'passager') %><br>
+              <span class="<%= jet.available ? 'text-success' : 'text-danger' %>">
+                <%= jet.available ? 'Disponible' : 'Indisponible' %>
+              </span>
             </p>
-            <%= link_to 'Voir les détails', jet_path(jet), class: "btn btn-jet btn-primary" %>
+            <%= link_to 'VOIR LES DÉTAILS', jet_path(jet), class: "btn btn-jet-primary" %>
           </div>
         </div>
       </div>
