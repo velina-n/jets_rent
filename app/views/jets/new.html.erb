@@ -1,19 +1,19 @@
-<%= simple_form_for @jet do |f| %>
+<%= simple_form_for(@jet, html: { multipart: true }) do |f| %>
   <div class="mb-3">
-    <%= f.input :model, label: "Modèle du jet", input_html: { class: "form-control" } %>
+    <%= f.input :model, label: "Modèle du jet" %>
   </div>
-
   <div class="mb-3">
-    <%= f.input :price, label: "Prix par jour (€)", input_html: { class: "form-control" } %>
+    <%= f.input :price, label: "Prix par jour (€)" %>
   </div>
-
   <div class="mb-3">
-    <%= f.input :capacity, label: "Capacité (nombre de passagers)", input_html: { class: "form-control" } %>
+    <%= f.input :capacity, label: "Capacité (nombre de passagers)" %>
   </div>
-
   <div class="mb-3">
     <%= f.input :available, as: :boolean, label: "Disponible ?" %>
   </div>
-
-  <%= f.submit "Créer le jet", class: "btn btn-primary" %>
+  <div class="mb-3">
+  <%= f.input :images, as: :file, input_html: { multiple: true }, label: "Images" %>  </div>
+  <div class="mt-4">
+    <%= f.submit "Créer le jet", class: "btn btn-primary" %>
+  </div>
 <% end %>

@@ -13,38 +13,6 @@
 
 @import "dark.css";
 
-h1 {
-  color: #f66505;
-  font-size: 2.5rem;
-  // line-height: 100rem;
-  font-weight: 800;
-}
-
-
-
-.btn-primary:hover {
-  background-color:#9e816e;
-}
-
-.btn-secondary {
-  color: #e4cccc;
-  background-color: #f8f9fa;
-  border-color: #ddd;
-}
-
-.btn-outline-primary {
-  color: #f8f9fa;
-  background-color: #8c644b;
-}
-
-body {
-  background-color: #d3bfa7
-}
-
-a {
-   color: #151414;
-}
-
 /* Styles pour la bannière */
 .banner {
   background-image: url('https://img.freepik.com/photos-gratuite/avion-est-piste-mention-jet-prive-devant_188544-8032.jpg?t=st=1732106120~exp=1732109720~hmac=873f31fddc115deccafc70dd0b1f047d8135659bdf7d6ebae62eae0618b8ec3c&w=2000'); /* Image de fond pour la bannière */
@@ -115,11 +83,11 @@ a {
   }
 
   .btn-secondary {
-    background-color: #6c757d;
-    border-color: #6c757d;
+    background-color: #8c644b;
+    border-color: #8c644b;
     &:hover {
-      background-color: #5a6268;
-      border-color: #5a6268;
+      background-color: #704c3a;
+      border-color: #704c3a;
     }
   }
 }

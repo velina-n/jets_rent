@@ -13,7 +13,7 @@ class JetsController < ApplicationController
     @jet.user = current_user
 
     if @jet.save
-      redirect_to jet_path(@jet), notice: "Jet successfully created!"
+      redirect_to edit_jet_path(@jet), notice: "Jet successfully created!"
     else
       render :new, status: :unprocessable_entity
     end
@@ -31,6 +31,6 @@ class JetsController < ApplicationController
   private
 
   def jet_params
-    params.require(:jet).permit(:model, :price, :available, :capacity)
+    params.require(:jet).permit(:model, :price, :capacity, :available, images: [])
   end
 end
