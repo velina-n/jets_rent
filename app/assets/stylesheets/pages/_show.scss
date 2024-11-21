@@ -1,33 +1,24 @@
-@import "pages/jets_show";
-
 .jet-details {
-  background-color: #f9f5f0; /* Teinte douce pour le fond */
-  padding: 40px;
+  background-color: #f8f1e7; /* Couleur de fond */
+  padding: 20px;
+  border-radius: 10px; /* Coins arrondis */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Légère ombre */
+}
+
+.jet-image {
+  border-radius: 10px; /* Coins arrondis */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Ombre */
+}
+
+.reservation-form {
+  background-color: #fff; /* Fond blanc pour le formulaire */
+  padding: 20px;
   border-radius: 10px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre */
+}
 
-  .jet-title {
-    font-size: 2.5rem;
-    color: #8c644b;
-    font-weight: bold;
-    text-transform: uppercase;
-  }
-
-  .jet-image {
-    max-height: 300px;
-    object-fit: cover;
-    border: 3px solid #8c644b;
-  }
-
-  .jet-model {
-    font-size: 1.8rem;
-    color: #8c644b;
-    font-weight: bold;
-    margin-top: 20px;
-  }
-
-  .jet-price, .jet-availability, .jet-capacity {
-    font-size: 1.2rem;
-    margin-top: 10px;
-  }
+.action-buttons .btn {
+  display: block;
+  width: 100%; /* Boutons larges */
+  margin-bottom: 10px;
 }
