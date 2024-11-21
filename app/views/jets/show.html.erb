@@ -1,10 +1,10 @@
 <div class="jet-details container mt-5">
   <h1 class="jet-title text-center mb-4">Détails du Jet</h1>
-
+  <div class="container-resa">
   <div class="row">
     <!-- Section gauche : Image -->
-
-    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+<div class="column">
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" style="width:50%">
   <div class="carousel-inner">
     <div class="carousel-item active">
         <%=  image_tag @jet.image ,class:"d-block w-100" %>
@@ -24,8 +24,7 @@
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Next</span>
   </button>
-</div>
-
+  </div>
     <!-- Section centre : Informations -->
     <div class="col-md-4 d-flex flex-column justify-content-center">
       <h2 class="jet-model"><%= @jet.model %></h2>
@@ -44,7 +43,9 @@
         <%= link_to 'Retour à la liste', jets_path, class: 'btn btn-jet-secondary mb-2' %>
       </div>
     </div>
+</div>
 
+<div class="column2">
     <!-- Section droite : Formulaire -->
     <div class="col-md-4">
       <div class="reservation-form">
@@ -53,4 +54,6 @@
       </div>
     </div>
   </div>
+</div>
+</div>
 </div>

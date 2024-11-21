@@ -22,3 +22,22 @@
   width: 100%; /* Boutons larges */
   margin-bottom: 10px;
 }
+
+ .container-resa {
+  display: grid;
+  grid-template-columns: 500px 500px;
+ }
+
+.column {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 1;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
