@@ -1,5 +1,5 @@
 <%# app/views/jets/show.html.erb %>
-<div class="jet-details container mt-5">
+<div class="jet-details container mt-4">
   <h1 class="jet-title text-center mb-4">Détails du Jet</h1>
 
   <div class="row">
@@ -10,7 +10,7 @@
 
     <!-- Section droite : Informations -->
     <div class="col-md-6">
-      <h2 class="jet-model"><%= @jet.model %></h2>
+      <h2 class="jet-model mt-2 mb-4"><%= @jet.model %></h2>
       <p class="jet-price">
         <strong>Prix par jour : </strong><%= convert_to_euro(@jet.price) %>
       </p>

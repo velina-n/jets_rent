@@ -14,3 +14,11 @@
   transform: scale(1.1); /* Zoom à 110% */
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Ajout d'une ombre portée */
 }
+
+.card {
+  margin: 15px; /* Ajoute une marge autour de chaque carte */
+}
+
+.unavailable {
+  opacity: .5;
+}
