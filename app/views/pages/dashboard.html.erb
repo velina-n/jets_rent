@@ -18,4 +18,11 @@
         </div>
       </div>
     <% end %>
+
+    <hr>
+    <% @bookings.each do |booking| %>
+      <p><%= booking.jet.model %></p>
+      <p><%= booking.start_date %></p>
+      <p><%= booking.end_date %></p>
+    <% end %>
   </div>
