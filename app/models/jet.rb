@@ -1,5 +1,6 @@
 class Jet < ApplicationRecord
   belongs_to :user
+  has_many :bookings, dependent: :destroy
   has_many_attached :images
 
   # Attribut virtuel pour désactiver temporairement la validation des images
