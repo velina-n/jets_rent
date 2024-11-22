@@ -4,7 +4,10 @@
     color: #8c644b;
     font-weight: bold;
     text-transform: uppercase;
-    margin-bottom: 20px; /* Espacement sous le titre */
+
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
   }
 
   .jet-model {
@@ -12,8 +15,7 @@
     color: #8c644b;
     font-weight: bold;
     margin-top: 20px;
-    padding-left: 200px;
-    text-justify: auto;
+    text-align: center;
   }
 
   .jet-price,
