@@ -17,15 +17,15 @@ puts "Utilisateurs créés : #{User.count}"
 # Création des jets
 puts "Création des jets"
 jets_data = [
-  { model: 'Falcon 900', price: 8000, available: false, user: default_user, capacity: 12 },
-  { model: 'Gulfstream G650', price: 8500, available: true, user: user2, capacity: 14 },
-  { model: 'Cesna', price: 4000, available: true, user: default_user, capacity: 8 },
-  { model: 'Citation Ultra', price: 5000, available: true, user: default_user, capacity: 7 },
-  { model: 'Solar Impulse', price: 4000, available: true, user: default_user, capacity: 1 },
-  { model: 'Embraer', price: 4000, available: true, user: default_user, capacity: 8 },
-  { model: 'Learjet', price: 5000, available: true, user: default_user, capacity: 7 },
-  { model: 'Learjet XR', price: 4000, available: true, user: default_user, capacity: 8 },
-  { model: 'Rafale', price: 12000, available: true, user: default_user, capacity: 1 }
+  { model: 'Falcon 900', price: 8000, available: false, user: default_user, capacity: 12, image: 'Falcon 900.png' },
+  { model: 'Gulfstream G650', price: 8500, available: true, user: user2, capacity: 14, image: 'Gulfstream G650.png' },
+  { model: 'Cesna', price: 4000, available: true, user: default_user, capacity: 8, image: 'Cesna1.png' },
+  { model: 'Citation Ultra', price: 5000, available: true, user: default_user, capacity: 7, image: 'Citation Ultra3.png' },
+  { model: 'Solar Impulse', price: 4000, available: true, user: default_user, capacity: 1, image: 'Solar impulse.png' },
+  { model: 'Embraer', price: 4000, available: true, user: default_user, capacity: 8, image: 'Embraer.png' },
+  { model: 'Learjet', price: 5000, available: true, user: default_user, capacity: 7, image: 'Learjet2.png' },
+  { model: 'Learjet XR', price: 4000, available: true, user: default_user, capacity: 8, image: 'LearjetXR2.png' },
+  { model: 'Rafale', price: 12000, available: true, user: default_user, capacity: 1, image: 'Maverick.png' }
 ]
 
 jets_data.each do |jet_data|
