@@ -17,15 +17,15 @@ puts "Utilisateurs créés : #{User.count}"
 # Création des jets
 puts "Création des jets"
 jets_data = [
-  { model: 'Falcon 900', price: 8000, available: false, user: default_user, capacity: 12, image: 'Falcon 900.png' },
-  { model: 'Gulfstream G650', price: 8500, available: true, user: user2, capacity: 14, image: 'Gulfstream G650.png' },
-  { model: 'Cesna', price: 4000, available: true, user: default_user, capacity: 8, image: 'Cesna1.png' },
-  { model: 'Citation Ultra', price: 5000, available: true, user: default_user, capacity: 7, image: 'Citation Ultra3.png' },
-  { model: 'Solar Impulse', price: 4000, available: true, user: default_user, capacity: 1, image: 'Solar impulse.png' },
-  { model: 'Embraer', price: 4000, available: true, user: default_user, capacity: 8, image: 'Embraer.png' },
-  { model: 'Learjet', price: 5000, available: true, user: default_user, capacity: 7, image: 'Learjet2.png' },
-  { model: 'Learjet XR', price: 4000, available: true, user: default_user, capacity: 8, image: 'LearjetXR2.png' },
-  { model: 'Rafale', price: 12000, available: true, user: default_user, capacity: 1, image: 'Maverick.png' }
+  { model: 'Falcon 900', price: 8000, available: false, user: default_user, capacity: 12, image: 'Falcon 900.png', image1: 'Falcon900-2.png', image2: 'Falcon900-3.png'  },
+  { model: 'Gulfstream G650', price: 8500, available: true, user: user2, capacity: 14, image: 'Gulfstream G650.png', image1: 'GulfstreamG650-2.png', image2: 'GulfstreamG650-3.png' },
+  { model: 'Embraer', price: 4000, available: true, user: default_user, capacity: 8, image: 'Embraer1.png', image1:'Embraer2.png', image2: 'Embraer3.png' },
+  { model: 'Citation Ultra', price: 5000, available: true, user: default_user, capacity: 7, image: 'Citation Ultra3.png', image1: 'Citation Ultra2.png', image2: 'Citation Ultra4.png' },
+  { model: 'Solar Impulse', price: 4000, available: true, user: default_user, capacity: 1, image: 'Solar impulse.png', image1: 'Solar Impulse2.png', image2: 'Solar impulse.png' },
+  { model: 'Cesna', price: 4000, available: true, user: default_user, capacity: 8, image: 'Cesna2.png', image1: 'Cesna3.png', image: 'Cesna4.png' },
+  { model: 'Jet médical urgence', price: 5000, available: true, user: default_user, capacity: 7, image: 'Learjet2.png', image1: 'Learjet1.png', image2: 'Learjet4.png' },
+  { model: 'Learjet XR', price: 4000, available: true, user: default_user, capacity: 8, image: 'LearjetXR2.png', image1: 'LearjetXR1.png', image2: 'LearjetXR3.png' },
+  { model: 'F-14A', price: 12000, available: true, user: default_user, capacity: 1, image: 'Maverick.png', image1: 'TopGun2.png', image2: 'TopGun3.png' }
 ]
 
 jets_data.each do |jet_data|

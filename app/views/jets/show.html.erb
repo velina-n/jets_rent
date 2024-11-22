@@ -1,6 +1,6 @@
 <%# app/views/jets/show.html.erb %>
 <div class="jet-details container mt-5">
-  <div class="d-flex align-items-center mb-4">
+  <div class="d-flex align-items-center mb-4 mt-3">
     <div class="action-buttons">
       <%= link_to 'Retour à la liste', jets_path, class: 'btn btn-jet-secondary mb-2' %>
     </div>
@@ -17,10 +17,10 @@
       <%=  image_tag @jet.image ,class:"d-block w-100" %>
     </div>
     <div class="carousel-item">
-      <%=  image_tag @jet.image ,class:"d-block w-100" %>
+      <%=  image_tag @jet.image1 ,class:"d-block w-100" %>
     </div>
     <div class="carousel-item">
-      <%=  image_tag @jet.image ,class:"d-block w-100" %>
+      <%=  image_tag @jet.image2 ,class:"d-block w-100" %>
     </div>
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
@@ -33,7 +33,9 @@
   </button>
   </div>
     <!-- Section centre : Informations -->
+  <br>
   <h2 class="jet-model"><%= @jet.model %></h2>
+  <br>
   <div class="d-flex justify-content-around">
     <div class="jet-price d-flex flex-column">
       <strong>Prix par jour </strong>

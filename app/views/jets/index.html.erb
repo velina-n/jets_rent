@@ -1,5 +1,5 @@
 <div class="container">
-  <h1 class="text-center">AVIONS DISPONIBLES</h1>
+  <h1 class="text-center mt-4">AVIONS DISPONIBLES</h1>
   <h2 class="text-center">Prenez votre envol dans un confort absolu !</h2>
   <div class="row">
     <% @jets.each do |jet| %>
@@ -10,7 +10,7 @@
           <div class="card-body text-center">
             <h5 class="card-title fw-bold"><%= jet.model %></h5>
             <p class="card-text">
-              <%= number_to_currency(jet.price) %><br>
+              <%= convert_to_euro(jet.price) %><br>
               <%= pluralize(jet.capacity, 'passager') %><br>
               <span class="<%= jet.available ? 'text-success' : 'text-danger' %>">
                 <%= jet.available ? 'Disponible' : 'Indisponible' %>
