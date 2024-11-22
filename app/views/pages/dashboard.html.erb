@@ -31,7 +31,7 @@
               <!-- Boutons pour accepter ou refuser -->
               <div class="mt-2">
                 <%= link_to "Accepter", accept_booking_path(booking), method: :patch, class: "btn btn-success btn-sm me-2", data: { turbo: false } %>
-                <%= link_to "Refuser", decline_booking_path(booking), method: :delete, class: "btn btn-danger btn-sm" %>
+                <%= link_to "Refuser", decline_booking_path(booking), method: :delete, class: "btn btn-danger btn-sm", data: { turbo: false } %>
               </div>
             <% else %>
               <div class="mt-2">
