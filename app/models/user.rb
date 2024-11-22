@@ -7,5 +7,5 @@ class User < ApplicationRecord
 
   # Les associations doivent être définies dans le bon ordre
   has_many :bookings, dependent: :destroy
-  has_many :jets, through: :bookings, dependent: :destroy
+  has_many :jets, dependent: :destroy
 end
