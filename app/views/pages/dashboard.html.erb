@@ -3,23 +3,42 @@
   <p class="text-center">Voici un aperçu de vos informations :</p>
 
   <!-- Section pour les jets -->
+
   <div class="mt-4">
-    <h2>Vos jets</h2>
+    <h2 class="text-center">Vos jets</h2>
+    <div class="row">
+    <% @jets.each do |jet| %>
+      <div class="col-md-4">
+        <div class="card jet-card">
+          <!-- Recherche de l'image -->
+          <%= image_tag(asset_path(jet.image), class: "card-img-top jet-card-img", alt: jet.model) if jet.image.present? %>
+          <div class="card-body text-center">
+            <h5 class="card-title fw-bold"><%= jet.model %></h5>
+            <p class="card-text">
+              <%= number_to_currency(jet.price) %><br>
+              <%= pluralize(jet.capacity, 'passager') %><br>
+              <span class="<%= jet.available ? 'text-success' : 'text-danger' %>">
+                <%= jet.available ? 'Disponible' : 'Indisponible' %>
+              </span>
+            </p>
+            <%= link_to 'VOIR LES DÉTAILS', jet_path(jet), class: "btn btn-jet-primary" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
     <% if @jets.present? %>
-      <ul>
-        <% @jets.each do |jet| %>
-          <li><%= link_to jet.model, jet_path(jet) %></li>
-        <% end %>
-      </ul>
+
     <% else %>
       <p>Vous n'avez pas encore de jets enregistrés.</p>
     <% end %>
   </div>
+</div>
 
   <!-- Section pour les réservations -->
   <div class="mt-4">
     <h2>Vos réservations</h2>
-    <% if @@bookings_for_my_jets.present? %>
+    <% if @bookings_for_my_jets.present? %>
       <ul>
         <% @bookings.each do |booking| %>
           <li>
