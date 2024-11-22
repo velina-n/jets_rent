@@ -1,6 +1,11 @@
 <%# app/views/jets/show.html.erb %>
 <div class="jet-details container mt-5">
-  <h1 class="jet-title text-center mb-4">Détails du Jet</h1>
+  <div class="d-flex align-items-center mb-4">
+    <div class="action-buttons">
+      <%= link_to 'Retour à la liste', jets_path, class: 'btn btn-jet-secondary mb-2' %>
+    </div>
+    <h1 class="jet-title text-center">Détails du Jet</h1>
+  </div>
   <div class="container-resa" style="
     display: grid;
     grid-template-columns: 500px 500px;">
@@ -9,13 +14,13 @@
     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
-        <%=  image_tag @jet.image ,class:"d-block w-100" %>
+      <%=  image_tag @jet.image ,class:"d-block w-100" %>
     </div>
     <div class="carousel-item">
-        <%=  image_tag @jet.image ,class:"d-block w-100" %>
+      <%=  image_tag @jet.image ,class:"d-block w-100" %>
     </div>
     <div class="carousel-item">
-        <%=  image_tag @jet.image ,class:"d-block w-100" %>
+      <%=  image_tag @jet.image ,class:"d-block w-100" %>
     </div>
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
@@ -28,26 +33,25 @@
   </button>
   </div>
     <!-- Section centre : Informations -->
-    <div class="col-md-4 d-flex flex-column justify-content-center">
-      <h2 class="jet-model"><%= @jet.model %></h2>
-      <p class="jet-price">
-        <strong>Prix par jour  </strong><%= convert_to_euro(@jet.price) %>
-      </p>
-      <p class="jet-availability">
-        <strong>Disponibilité  </strong><%= @jet.available ? 'Disponible' : 'Non disponible' %>
-      </p>
-      <p class="jet-capacity">
-        <strong>Capacité  </strong><%= @jet.capacity %> passagers
-      </p>
-
-      <!-- Boutons d'action -->
-      <div class="action-buttons mt-4">
-        <%= link_to 'Retour à la liste', jets_path, class: 'btn btn-jet-secondary mb-2' %>
-      </div>
+  <h2 class="jet-model"><%= @jet.model %></h2>
+  <div class="d-flex justify-content-around">
+    <div class="jet-price d-flex flex-column">
+      <strong>Prix par jour </strong>
+      <span><%= convert_to_euro(@jet.price) %></span>
     </div>
+    <div class="jet-availability d-flex flex-column">
+      <strong>Disponibilité  </strong>
+      <p><%= @jet.available ? 'Disponible' : 'Non disponible' %></p>
+    </div>
+    <div class="jet-capacity d-flex flex-column">
+      <strong>Capacité  </strong>
+      <p><%= @jet.capacity %> passagers</p>
+    </div>
+  </div>
 </div>
 
-<div class="column2">
+<% if @jet.user != current_user %>
+  <div class="column2">
     <!-- Section droite : Formulaire -->
     <div class="col-md-4">
       <div class="reservation-form">
@@ -56,5 +60,6 @@
       </div>
     </div>
   </div>
-</div>
+<% end %>
+  </div>
 </div>
