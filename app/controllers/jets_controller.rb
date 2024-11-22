@@ -11,9 +11,8 @@ class JetsController < ApplicationController
   def create
     @jet = Jet.new(jet_params)
     @jet.user = current_user
-
     if @jet.save
-      redirect_to edit_jet_path(@jet), notice: "Jet successfully created!"
+      redirect_to dashboard_path, notice: "Jet successfully created!"
     else
       render :new, status: :unprocessable_entity
     end
