@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   resources :bookings, only: [] do
     member do
       patch :accept
-      delete :decline
+      patch :decline
     end
   end
 
