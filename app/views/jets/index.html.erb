@@ -6,7 +6,7 @@
       <div class="col-md-4">
         <div class="card jet-card">
           <!-- Recherche de l'image -->
-          <%= image_tag(asset_path(jet.image), class: "card-img-top jet-card-img", alt: jet.model) if jet.image.present? %>
+          <%= cl_image_tag(jet.images.first.key, class: "card-img-top jet-card-img", alt: jet.model) if jet.images.present? %>
           <div class="card-body text-center">
             <h5 class="card-title fw-bold"><%= jet.model %></h5>
             <p class="card-text">
