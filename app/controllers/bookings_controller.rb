@@ -1,5 +1,6 @@
 class BookingsController < ApplicationController
   before_action :set_booking, only: [:accept, :decline]
+
   def create
     @jet = Jet.find(params[:jet_id]) # Trouve le jet associé
     @booking = @jet.bookings.new(booking_params) # Associe la réservation au jet
@@ -21,8 +22,7 @@ class BookingsController < ApplicationController
 
   # Refuser une réservation
   def decline
-    @booking = Booking.find(params[:id])
-    @booking.destroy # Supprime la réservation
+    @booking.update(status: 'declined')
 
     redirect_to dashboard_path, notice: "La réservation a été refusée et supprimée."
   end
