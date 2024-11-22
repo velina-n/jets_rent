@@ -1,10 +1,8 @@
-<!-- app/views/pages/dashboard.html.erb -->
-
 <div class="container mt-5">
   <h1 class="text-center">Bienvenue sur votre Dashboard</h1>
   <p class="text-center">Voici un aperçu de vos informations :</p>
 
-  <!-- Exemple de contenu -->
+  <!-- Section pour les jets -->
   <div class="mt-4">
     <h2>Vos jets</h2>
     <% if @jets.present? %>
@@ -18,12 +16,31 @@
     <% end %>
   </div>
 
+  <!-- Section pour les réservations -->
   <div class="mt-4">
     <h2>Vos réservations</h2>
     <% if @bookings.present? %>
       <ul>
         <% @bookings.each do |booking| %>
-          <li>Réservation au départ de <%= booking.airport %>, du <%= booking.start_date %> au <%= booking.end_date %></li>
+          <li>
+            Réservation au départ de <%= booking.airport %>,
+            du <%= booking.start_date %> au <%= booking.end_date %>
+            (<strong>Statut :</strong> <%= booking.status %>)
+
+            <% if booking.status == "pending" %>
+              <!-- Boutons pour accepter ou refuser -->
+              <div class="mt-2">
+                <%= link_to "Accepter", accept_booking_path(booking), method: :patch, class: "btn btn-success btn-sm me-2", data: { turbo: false } %>
+                <%= link_to "Refuser", decline_booking_path(booking), method: :delete, class: "btn btn-danger btn-sm" %>
+              </div>
+            <% else %>
+              <div class="mt-2">
+                <span class="badge <%= booking.status == 'accepted' ? 'bg-success' : 'bg-danger' %>">
+                  <%= booking.status == "accepted" ? "Acceptée" : "Refusée" %>
+                </span>
+              </div>
+            <% end %>
+          </li>
         <% end %>
       </ul>
     <% else %>
