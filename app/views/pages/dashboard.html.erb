@@ -11,11 +11,7 @@
       <div class="col-md-4">
         <div class="card jet-card">
           <!-- Recherche de l'image -->
-          <% if jet.image.nil? %>
-            <%= image_tag(jet.images.first, class: "card-img-top jet-card-img", alt: jet.model) unless jet.images.empty? %>
-          <% else %>
-            <%= image_tag(jet.image, class: "card-img-top jet-card-img", alt: jet.model) if jet.image.present? %>
-          <% end %>
+            <%= cl_image_tag(jet.images.first.key, class: "card-img-top jet-card-img", alt: jet.model) unless jet.images.empty? %>
           <div class="card-body text-center">
             <h5 class="card-title fw-bold"><%= jet.model %></h5>
             <p class="card-text">

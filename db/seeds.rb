@@ -1,3 +1,5 @@
+require 'open-uri'
+
 puts "Nettoyage de la base de données...."
 Booking.destroy_all
 Jet.destroy_all
@@ -17,27 +19,42 @@ puts "Utilisateurs créés : #{User.count}"
 # Création des jets
 puts "Création des jets"
 jets_data = [
-  { model: 'Falcon 900', price: 8000, available: false, user: default_user, capacity: 12, image: 'Falcon 900.png', image1: 'Falcon900-2.png', image2: 'Falcon900-3.png'  },
-  { model: 'Gulfstream G650', price: 8500, available: true, user: user2, capacity: 14, image: 'Gulfstream G650.png', image1: 'GulfstreamG650-2.png', image2: 'GulfstreamG650-3.png' },
-  { model: 'Embraer', price: 4000, available: true, user: user2, capacity: 8, image: 'Embraer1.png', image1:'Embraer2.png', image2: 'Embraer3.png' },
-  { model: 'Citation Ultra', price: 5000, available: true, user: user2, capacity: 7, image: 'Citation Ultra3.png', image1: 'Citation Ultra2.png', image2: 'Citation Ultra4.png' },
-  { model: 'Solar Impulse', price: 4000, available: true, user: user2, capacity: 1, image: 'Solar impulse.png', image1: 'Solar Impulse2.png', image2: 'Solar impulse.png' },
-  { model: 'Cesna', price: 4000, available: true, user: user2, capacity: 8, image: 'Cesna2.png', image1: 'Cesna3.png', image2: 'Cesna4.png' },
-  { model: 'Jet médical urgence', price: 5000, available: true, user: default_user, capacity: 7, image: 'Learjet2.png', image1: 'Learjet1.png', image2: 'Learjet4.png' },
-  { model: 'Learjet XR', price: 4000, available: true, user: default_user, capacity: 8, image: 'LearjetXR2.png', image1: 'LearjetXR1.png', image2: 'LearjetXR3.png' },
-  { model: 'F-14A', price: 12000, available: true, user: default_user, capacity: 1, image: 'Maverick.png', image1: 'TopGun2.png', image2: 'TopGun3.png' },
-  { model: 'Jet médical urgence', price: 5000, available: true, user: default_user, capacity: 7, image: 'Learjet2.png', image1: 'Learjet1.png', image2: 'Learjet4.png' },
-  { model: 'Learjet XR', price: 4000, available: true, user: user2, capacity: 8, image: 'LearjetXR2.png', image1: 'LearjetXR1.png', image2: 'LearjetXR3.png' },
-  { model: 'F-14A', price: 12000, available: true, user: user2, capacity: 1, image: 'Maverick.png', image1: 'TopGun2.png', image2: 'TopGun3.png' }
+  { model: 'Falcon 900', price: 8000, available: false, user: default_user, capacity: 12, images: ['Falcon 900.png', 'Falcon900-2.png', 'Falcon900-3.png'] },
+  { model: 'Gulfstream G650', price: 8500, available: true, user: user2, capacity: 14, images: ['Gulfstream G650.png', 'GulfstreamG650-2.png', 'GulfstreamG650-3.png'] },
+  { model: 'Embraer', price: 4000, available: true, user: user2, capacity: 8, images: ['Embraer1.png', 'Embraer2.png', 'Embraer3.png'] },
+  { model: 'Citation Ultra', price: 5000, available: true, user: user2, capacity: 7, images: ['Citation Ultra3.png', 'Citation Ultra2.png', 'Citation Ultra4.png'] },
+  { model: 'Solar Impulse', price: 4000, available: true, user: user2, capacity: 1, images: ['Solar impulse.png', 'Solar Impulse2.png', 'Solar impulse.png'] },
+  { model: 'Cesna', price: 4000, available: true, user: user2, capacity: 8, images: ['Cesna2.png', 'Cesna3.png', 'Cesna4.png'] },
+  { model: 'Jet médical urgence', price: 5000, available: true, user: default_user, capacity: 7, images: ['Learjet2.png', 'Learjet1.png', 'Learjet4.png'] },
+  { model: 'Learjet XR', price: 4000, available: true, user: default_user, capacity: 8, images: ['LearjetXR2.png', 'LearjetXR1.png', 'LearjetXR3.png'] },
+  { model: 'F-14A', price: 12000, available: true, user: default_user, capacity: 1, images: ['Maverick.png', 'TopGun2.png', 'TopGun3.png'] },
+  { model: 'Jet médical urgence', price: 5000, available: true, user: default_user, capacity: 7, images: ['Learjet2.png', 'Learjet1.png', 'Learjet4.png'] },
+  { model: 'Learjet XR', price: 4000, available: true, user: user2, capacity: 8, images: ['LearjetXR2.png', 'LearjetXR1.png', 'LearjetXR3.png'] },
+  { model: 'F-14A', price: 12000, available: true, user: user2, capacity: 1, images: ['Maverick.png', 'TopGun2.png', 'TopGun3.png'] }
 ]
 
+
 jets_data.each do |jet_data|
-  jet = Jet.new(jet_data)
-  jet.skip_image_validation = true # Désactive temporairement la validation des images
-  jet.save!
+  jet = Jet.new(jet_data.except(:images))
+
+  jet_data[:images].each do |filename|
+    # Attach image from the public folder
+    file_path = Rails.root.join("public/#{filename}")
+    if File.exist?(file_path)
+      jet.images.attach(io: File.open(file_path), filename: filename, content_type: "image/png")
+    else
+      puts "Image file not found: #{file_path}"
+    end
+  end
+
+  if jet.save
+    puts "Jet #{jet.model} created successfully."
+  else
+    puts "Failed to create jet #{jet.model}: #{jet.errors.full_messages.join(', ')}"
+  end
 end
 
-puts "Jets créés : #{Jet.count}"
+puts "Jet creation completed."
 
 # Création des réservations
 puts "Création des réservations"
